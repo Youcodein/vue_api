@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<HeaderCont />
-		<TitleCont />
+		<TitleCont name1="About" name2="Reference" />
 		<ContactCont />
 		<FooterCont />
 	</div>
@@ -9,8 +9,8 @@
 <script>
 import HeaderCont from '@/components/HeaderCont.vue';
 import TitleCont from '@/components/TitleCont.vue';
-import ContactCont from '@/components/ContactCont.vue';
 import FooterCont from '@/components/FooterCont.vue';
+import ContactCont from '@/components/ContactCont.vue';
 export default {
 	components: {
 		HeaderCont,

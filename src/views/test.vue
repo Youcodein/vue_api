@@ -24,7 +24,7 @@
 						>
 							<swiper-slide v-for="slider in sliders" :key="slider.id">
 								<div class="item">
-									<a :href="`https://www.themoviedb.org/movie/${slider.id}`">
+									<a href="#">
 										<img
 											:src="`https://image.tmdb.org/t/p/w500/${slider.poster_path}`"
 											:alt="slider.title"
@@ -54,7 +54,7 @@
 							<div class="movie__list">
 								<ul>
 									<li v-for="movie in movies" :key="movie.id">
-										<a :href="`https://www.themoviedb.org/movie/${movie.id}`">
+										<a href="">
 											<img
 												:src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
 												:alt="movie.title"
@@ -102,7 +102,7 @@ export default {
 		// async, await 데이터 다운이 늦을 수 있어서 비동기적으로 넣어주는 것임 리엑트에도!!
 		const SearchMovies = async () => {
 			await fetch(
-				`https://api.themoviedb.org/3/search/movie?api_key=25947345ed29186e578a0e972443bc29&query=${search.value}`,
+				`https://api.themoviedb.org/3/search/movie?api_key=1fb50f08441e9552bb427c8e5f22096d&query=${search.value}`,
 			)
 				.then(response => response.json())
 				.then(result => {
@@ -115,7 +115,7 @@ export default {
 		SearchMovies();
 		const TopMovies = () => {
 			fetch(
-				`https://api.themoviedb.org/3/movie/popular?api_key=25947345ed29186e578a0e972443bc29`,
+				`https://api.themoviedb.org/3/movie/popular?api_key=1fb50f08441e9552bb427c8e5f22096d`,
 			)
 				.then(response => response.json())
 				.then(result => (sliders.value = result.results))
@@ -141,7 +141,6 @@ export default {
 		li {
 			width: 18%;
 			position: relative;
-			margin-bottom: 20px;
 			em {
 				display: block;
 				height: 80px;
@@ -204,18 +203,18 @@ export default {
 		z-index: 1000;
 	}
 }
-.movie__slider {
+.Movie__slider {
 	height: 800px;
 	.swiper {
 		width: 100%;
-		padding-top: 100px;
-		padding-bottom: 220px;
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
 	.swiper-slide {
 		background-position: center;
 		background-size: cover;
 		width: 300px;
-		// height: 300px;
+		height: 300px;
 	}
 	.swiper-slide img {
 		display: block;
